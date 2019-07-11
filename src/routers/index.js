@@ -11,9 +11,15 @@ import Home from '../views/Home.vue';
 import Group from '../views/Group.vue';
 import Cart from '../views/Cart.vue';
 import Mine from '../views/Mine.vue';
+<<<<<<< HEAD
 import Login from '../views/Login.vue';
 import Reg from '../views/Reg.vue';
 // import Goods from '../components/Goods.vue';
+=======
+// import Login from '../views/Login.vue';
+// import Reg from '../views/Reg.vue';
+// import Goods from '../views/Goods.vue';
+>>>>>>> 5b1c4c9d259971a651205225fd7e27c2c7eb2519
 
 import axios from 'axios';
 
@@ -87,29 +93,41 @@ let router = new VueRouter({
         component: Mine,
         // 本组件需要登录权限才可访问
         // meta: { requiresAuth: true }
+        //  children:[
+        //     {
+        //         name:'reg',
+        //         path:'reg',
+        //         component:Reg
+        //     }
+        // ]
     },
     {
         name: 'Login',
         path: '/login',
-        component: Login,
+        // component: Login,
+        component: () => import(/* webpackChunkName: "rouSearch" */ '../views/Login.vue'),
         // 等效于：<Cart v-bind="route.params"/> == ：<Cart v-bind="{a:100,b:200}"/> == <Cart v-bind:a="100" v-bind:b="200"/>
         // props: true
-    },
-    {
+    },{
         name: 'Reg',
         path: '/reg',
-        component: Reg,
-        // props: function (route) {
-        //     if (route.query.username) {
-        //         return {
-        //             username: route.query.username.toUpperCase()
-        //         }
-        //     }
-        //     return {
-        //         className: '1904'
-        //     }
-        // }
-    },
+        component: () => import(/* webpackChunkName: "rouSearch" */ '../views/Reg.vue'),
+    }
+    // {
+    //     name: 'Reg',
+    //     path: '/reg',
+    //     component: Reg,
+    //     // props: function (route) {
+    //     //     if (route.query.username) {
+    //     //         return {
+    //     //             username: route.query.username.toUpperCase()
+    //     //         }
+    //     //     }
+    //     //     return {
+    //     //         className: '1904'
+    //     //     }
+    //     // }
+    // },
     // {
     //     name: 'Goods',
     //     path: '/goods/:id',
