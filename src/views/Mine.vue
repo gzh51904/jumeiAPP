@@ -11,9 +11,12 @@
         <div class="user-unlogin">
             <div class="noportrait"></div>
             <div class="operation">
-            <a class="signup" href="">注册</a>
+            <!-- <router-link class="signup" @click.native.prevent.stop="goto('Reg')">注册</router-link> -->
+            <router-link to="Reg" class="signup">注册</router-link>
+            <!-- <a class="signup" href="" @click="goto(item)">注册</a> -->
             <div style="margin-top:-5px;" class="separator"></div>
-            <a class="login" href="">登录</a>
+            <!-- <a class="login" href="">登录</a> -->
+            <router-link to="Login" class="login">登录</router-link>
         </div>
         <div class="order block">
             <div class="block-title">
@@ -98,19 +101,57 @@
         <div class="hint" style="padding-bottom:3.0625rem">
             客服热线400-123-8888 (8:00-22:00)<br>拨打前请记录您的UID  0    </div>
         </div>
+         <!-- <router-view/> -->
     </div>
+    
 </template>
 
 <script>
+
 import Vue from "vue";
-import { Upload, Avatar} from "element-ui"
 import { scrypt } from 'crypto';
 import { Script } from 'vm';
 import rem from '../../public/rem'
-Vue.use(Upload);
-Vue.use(Avatar);
+
 export default {
     
+    data(){
+
+    },
+     created() {
+    console.log('$route:',this.$route);
+    let baseUrl = this.$route.path;
+    this.cat = this.cat.map(item=>{
+      return {
+        ...item,
+        path:baseUrl+ '/' + item.name.toLowerCase()
+      }
+    })
+    // if (this.$route.params.category) {
+    //   this.cat = this.$route.params.category;
+    // }
+
+    // this.$axios.get('/goods').then(res=>{
+    //   console.log('res:',res)
+    // })
+  },
+//     methods: {
+//     handleSelect(index, indexPaht) {
+//       console.log(index, indexPaht);
+//       this.active = index;
+//     },
+//     goto(name) {
+//       this.$router.push({
+//         name,
+//         // path:'/'+name.toLowerCase(),
+//         params: { a: 100, b: 200 } //params只能通过name方式跳转时传参
+//       });
+//     },
+//     logout() {
+//       this.logined = false;
+//       localStorage.removeItem("Authorization");
+//     }
+//   },
 }
 </script>
 <style >

@@ -34,36 +34,7 @@
 <script>
 import vue from "vue"
 // import {mapState} from 'vuex';
-import {
-  Menu,
-  MenuItem,
-  Row,
-  Col,
-  Link,
-  Container,
-  Header,
-  Aside,
-  Main,
-  Form,
-  FormItem,
-  Button,
-  Input,
-  Badge
-} from "element-ui";
-// Vue.use(Menu);
-// Vue.use(MenuItem);
-// Vue.use(Row);
-// Vue.use(Col);
-// Vue.use(Link);
-// Vue.use(Container);
-// Vue.use(Header);
-// Vue.use(Aside);
-// Vue.use(Main);
-// Vue.use(Form);
-// Vue.use(FormItem);
-// Vue.use(Button);
-// Vue.use(Input);
-// Vue.use(Badge);
+
 
 export default {
   name: 'app',
