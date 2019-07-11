@@ -1,37 +1,108 @@
 <template>
   <div id="footer">
-    <div
-      class="bottom-nav"
-      style="background-color: rgb(255, 255, 255); border-top: 1px solid rgb(238, 238, 238);"
-    >
-      <a
-        namekey="index"
-        class="tabbar-index"
-        href="//h5.jumei.com"
-        style="color: rgb(254, 64, 112); background-image: url(&quot;//p12.jmstatic.com/mcms/5e9e00537e4a635e36e84db81f2cc17a.png&quot;);"
-      >首页</a>
-      <a
-        namekey="coutuan"
-        class="tabbar-coutuan"
-        href="//s.h5.jumei.com/yiqituan/list"
-        style="color: rgb(153, 153, 153); background-image: url(&quot;//p12.jmstatic.com/mcms/b51a66ca3ddb31ec0edbd67ea68f7589.png&quot;);"
-      >拼团</a>
-      <a
-        namekey="cart"
-        class="tabbar-cart"
-        href="//carth5.jumei.com"
-        redpoint="//carth5.jumei.com/api/cart/get_qty?_ajax_=1"
-        style="color: rgb(153, 153, 153); background-image: url(&quot;//p12.jmstatic.com/mcms/77b9454e8dd41a060510a445010ac934.png&quot;);"
-      >
-        购物车
-        <span class="nav-cart-num" style="display: none;">0</span>
-      </a>
-      <a
-        namekey="member"
-        class="tabbar-member"
-        href="https://i.jumei.com/m/account/my"
-        style="color: rgb(153, 153, 153); background-image: url(&quot;//p12.jmstatic.com/mcms/829aa091062366a9f7b93cfffaa0e681.png&quot;);"
-      >我的</a>
-    </div>
+    <footer class="bottom-nav">
+      <router-link class="home" to="/" active-class="active" exact>首页</router-link>
+      <router-link class="group" to="/group" active-class="active">拼团</router-link>
+      <router-link class="cart" to="/cart" active-class="active">购物车</router-link>
+      <router-link class="mine" to="/mine" active-class="active">我的</router-link>
+    </footer>
   </div>
 </template>
+<script>
+export default {};
+</script>
+
+<style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgb(238, 238, 238);
+  .bottom-nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    a {
+      width: 20%;
+      height: 50px;
+      background: #bcbc;
+      text-align: center;
+      background-position: center 10px;
+      box-sizing: border-box;
+      padding-top: 30px;
+      color: rgb(153, 153, 153);
+      
+    }
+    .home {
+      background: url(../assets/footnav/foot_nav_icon_home.png) no-repeat;
+      background-position: center 10px;
+      background-size: 22px 20px;
+      &.active {
+        background: url(../assets/footnav/foot_nav_icon_home_a.png) no-repeat;
+        background-position: center 10px;
+        color: rgb(254, 64, 112);
+        background-size: 22px 20px;
+        text-decoration: none;
+      }
+    }
+    .group {
+      background: url(../assets/footnav/foot_nav_icon_group.png) no-repeat;
+      background-position: center 10px;
+      background-size: 22px 20px;
+
+      &.active {
+        background: url(../assets/footnav/foot_nav_icon_group_a.png) no-repeat;
+        background-position: center 10px;
+        color: rgb(254, 64, 112);
+        text-decoration: none;
+        background-size: 22px 20px;
+
+      }
+    }
+    .cart {
+      background: url(../assets/footnav/foot_nav_icon_cart.png) no-repeat;
+      background-position: center 10px;
+      background-size: 22px 20px;
+
+      &.active {
+        background: url(../assets/footnav/foot_nav_icon_cart_a.png) no-repeat;
+        background-position: center 10px;
+        color: rgb(254, 64, 112);
+        text-decoration: none;
+        background-size: 22px 20px;
+
+      }
+    }
+    .mine {
+      background: url(../assets/footnav/foot_nav_icon_mine.png) no-repeat;
+      background-position: center 10px;
+      background-size: 22px 20px;
+
+      &.active {
+        background: url(../assets/footnav/foot_nav_icon_mine_a.png) no-repeat;
+        background-position: center 10px;
+        color: rgb(254, 64, 112);
+        text-decoration: none;
+        background-size: 22px 20px;
+
+      }
+    }
+  }
+}
+</style>

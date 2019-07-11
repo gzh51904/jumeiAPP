@@ -1,26 +1,25 @@
 <template>
+<!-- 路由配置匹配后，渲染对应的组件到router-vue -->
   <div id="app">
-    
+    <FootNav/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import FootNav from './components/FootNav.vue'
-
+import FootNav from "@/components/FootNav.vue"
+// import {mapState} from 'vuex';
 export default {
   components: {
-    HelloWorld
+    FootNav
   }
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
 }
 </style>
+
+
