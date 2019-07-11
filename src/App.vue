@@ -22,10 +22,10 @@
             </router-link>
           </li>
         </ul> -->
-        <router-link class="ee" to="/" active-class="active" exact>首页</router-link>
-        <router-link class="rr" to="/discover" active-class="active">拼团</router-link>
-        <router-link class="tt" to="/cart" active-class="active">购物车</router-link>
-        <router-link class="aa" to="/mine" active-class="active">我的</router-link>
+        <router-link class="home" to="/" active-class="active" exact>首页</router-link>
+        <router-link class="group" to="/discover" active-class="active">拼团</router-link>
+        <router-link class="cart" to="/cart" active-class="active">购物车</router-link>
+        <router-link class="mine" to="/mine" active-class="active">我的</router-link>
     </footer>
     <router-view/>
   </div>
@@ -102,9 +102,10 @@ export default {
 </script>
 
 <style>
-.active {
+.bottom-nav .active {
   font-weight: bold;
   color:  rgb(254, 64, 112);
+  text-decoration: none;
 }
 .bottom-nav {
     width: 100%;
@@ -116,23 +117,27 @@ export default {
     text-align: center;
     box-sizing: border-box;
     border-top: 1px solid rgb(238, 238, 238);
+ 
 }
 .bottom-nav a {
     background: #fff;
-    
+    color: #999;
     display: inline-block;
     width: 25%;
     height: 50px;
     background-repeat: no-repeat;
     background-position: center .3rem;
     background-size: 1.2rem 1.07rem;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /* padding-top: 1.5rem; */
-    line-height: 42px;
+    padding-top: 25px;
+    
     font-size: 10px;
     text-decoration: none;
     font-family: Arial,helvetica,"微软雅黑","Microsoft Yahei",sans-serif;
+}
+.bottom-nav .home {
+  background-image: url(./assets/shouye.png);
+  background-size: 15px 15px;
+
 }
 </style>
