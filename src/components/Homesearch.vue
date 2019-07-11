@@ -1,3 +1,6 @@
 <template>
-    <div id="search"></div>
+    <div id="search">
+        搜索
+    </div>
+    
 </template>
