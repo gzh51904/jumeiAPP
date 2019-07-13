@@ -1,54 +1,25 @@
 <template>
+<!-- 路由配置匹配后，渲染对应的组件到router-vue -->
   <div id="app">
-    <!-- <Particulars/> -->
-    <!-- <DetailsHead/>
-    <DetailsSlide/>
-    <DetailsExplain/>
-    <DetailsComment/>
-    <DetailsDescribe/> -->
-    <!-- <DetailsBuy/> -->
+    <!-- <FootNav/> -->
     <router-view/>
   </div>
 </template>
 
 <script>
-// import Particulars from './views/Particulars.vue';
-
-// import DetailsHead from './components/details/DetailsHead.vue';
-// import DetailsSlide from './components/details/DetailsSlide.vue';
-// import DetailsExplain from './components/details/DetailsExplain.vue';
-// import DetailsComment from './components/details/DetailsComment.vue';
-// import DetailsDescribe from './components/details/DetailsDescribe.vue';
-// import DetailsBuy from './components/details/DetailsBuy.vue';
-
-
+import FootNav from "@/components/FootNav.vue"
+// import {mapState} from 'vuex';
 export default {
-  // data(){
-  //   return{
-
-  //   }
-  // },
-  name: 'app',
   components: {
-  //   // Particulars
-  //   DetailsHead,
-  //   DetailsSlide,
-  //   DetailsExplain,
-  //   DetailsComment,
-  //   DetailsDescribe,
-    // DetailsBuy
-
+    FootNav
   }
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
-  /* margin-top: 60px; */
+*{
+  margin: 0;
+  padding: 0;
 }
 </style>
+
+
