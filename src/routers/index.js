@@ -106,27 +106,13 @@ let router = new VueRouter({
         name: 'Reg',
         path: '/reg',
         component: () => import(/* webpackChunkName: "rouSearch" */ '../views/Reg.vue'),
+    },
+  
+    {
+        name: 'Details',
+        path: '/details',
+        component: () => import(/* webpackChunkName: "rouSearch" */ '../views/Details.vue'),
     }
-    // {
-    //     name: 'Reg',
-    //     path: '/reg',
-    //     component: Reg,
-    //     // props: function (route) {
-    //     //     if (route.query.username) {
-    //     //         return {
-    //     //             username: route.query.username.toUpperCase()
-    //     //         }
-    //     //     }
-    //     //     return {
-    //     //         className: '1904'
-    //     //     }
-    //     // }
-    // },
-    // {
-    //     name: 'Goods',
-    //     path: '/goods/:id',
-    //     component: Goods
-    // },
 ]
 
 
