@@ -111,47 +111,10 @@
 import Vue from "vue";
 import { scrypt } from 'crypto';
 import { Script } from 'vm';
-import rem from '../../public/rem'
+
 
 export default {
     
-    data(){
-
-    },
-     created() {
-    console.log('$route:',this.$route);
-    let baseUrl = this.$route.path;
-    this.cat = this.cat.map(item=>{
-      return {
-        ...item,
-        path:baseUrl+ '/' + item.name.toLowerCase()
-      }
-    })
-    // if (this.$route.params.category) {
-    //   this.cat = this.$route.params.category;
-    // }
-
-    // this.$axios.get('/goods').then(res=>{
-    //   console.log('res:',res)
-    // })
-  },
-//     methods: {
-//     handleSelect(index, indexPaht) {
-//       console.log(index, indexPaht);
-//       this.active = index;
-//     },
-//     goto(name) {
-//       this.$router.push({
-//         name,
-//         // path:'/'+name.toLowerCase(),
-//         params: { a: 100, b: 200 } //params只能通过name方式跳转时传参
-//       });
-//     },
-//     logout() {
-//       this.logined = false;
-//       localStorage.removeItem("Authorization");
-//     }
-//   },
 }
 </script>
 <style >
@@ -159,9 +122,11 @@ export default {
     margin: 0;
     padding: 0;
 }
+
 html{
-       background: #f2f2f2;
+    background: #f2f2f2;
 }
+
 #wrapper {
     /* top: 0; */
     position: relative;

@@ -13,7 +13,7 @@ import Cart from '../views/Cart.vue';
 import Mine from '../views/Mine.vue';
 // import Login from '../views/Login.vue';
 // import Reg from '../views/Reg.vue';
-// import Goods from '../views/Goods.vue';
+// import Goods from '../components/Goods.vue';
 
 import axios from 'axios';
 
