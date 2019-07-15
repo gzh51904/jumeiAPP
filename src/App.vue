@@ -1,7 +1,7 @@
 <template>
 <!-- 路由配置匹配后，渲染对应的组件到router-vue -->
   <div id="app">
-    <!-- <FootNav/> -->
+    <FootNav/>
     <router-view/>
   </div>
 </template>

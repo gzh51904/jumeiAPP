@@ -23,18 +23,7 @@ export default {};
 </script>
 
 <style>
-
-* {
-  margin: 0;
-  padding: 0;
-}
-ul,
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
+c
 .bgc-f {
   background-color: #fff;
 }
