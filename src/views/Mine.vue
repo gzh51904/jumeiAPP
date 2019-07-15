@@ -108,33 +108,33 @@
 
 <script>
 
-import Vue from "vue";
-import { scrypt } from 'crypto';
-import { Script } from 'vm';
-import rem from '../../public/rem'
+// import Vue from "vue";
+// import { scrypt } from 'crypto';
+// import { Script } from 'vm';
+// import rem from '../../public/rem'
 
 export default {
     
-    data(){
+//     data(){
 
-    },
-     created() {
-    console.log('$route:',this.$route);
-    let baseUrl = this.$route.path;
-    this.cat = this.cat.map(item=>{
-      return {
-        ...item,
-        path:baseUrl+ '/' + item.name.toLowerCase()
-      }
-    })
-    // if (this.$route.params.category) {
-    //   this.cat = this.$route.params.category;
-    // }
+//     },
+//      created() {
+//     console.log('$route:',this.$route);
+//     let baseUrl = this.$route.path;
+//     this.cat = this.cat.map(item=>{
+//       return {
+//         ...item,
+//         path:baseUrl+ '/' + item.name.toLowerCase()
+//       }
+//     })
+//     // if (this.$route.params.category) {
+//     //   this.cat = this.$route.params.category;
+//     // }
 
-    // this.$axios.get('/goods').then(res=>{
-    //   console.log('res:',res)
-    // })
-  },
+//     // this.$axios.get('/goods').then(res=>{
+//     //   console.log('res:',res)
+//     // })
+//   },
 //     methods: {
 //     handleSelect(index, indexPaht) {
 //       console.log(index, indexPaht);

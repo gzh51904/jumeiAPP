@@ -11,15 +11,9 @@ import Home from '../views/Home.vue';
 import Group from '../views/Group.vue';
 import Cart from '../views/Cart.vue';
 import Mine from '../views/Mine.vue';
-<<<<<<< HEAD
 import Login from '../views/Login.vue';
 import Reg from '../views/Reg.vue';
 // import Goods from '../components/Goods.vue';
-=======
-// import Login from '../views/Login.vue';
-// import Reg from '../views/Reg.vue';
-// import Goods from '../views/Goods.vue';
->>>>>>> 5b1c4c9d259971a651205225fd7e27c2c7eb2519
 
 import axios from 'axios';
 

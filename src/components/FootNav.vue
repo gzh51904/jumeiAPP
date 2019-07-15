@@ -34,13 +34,13 @@ a {
   border-top: 1px solid rgb(238, 238, 238);
   .bottom-nav {
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     a {
       width: 20%;
-      height: 50px;
+      height: 3.125rem;
       background: #bcbc;
       text-align: center;
       background-position: center 10px;
