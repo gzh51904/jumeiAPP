@@ -13,6 +13,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         // 决定底部选项卡是否出现
+        isok:false,
         isShowMfooter: true,
         isShowMmodel: 0,
         isLogin: 0,

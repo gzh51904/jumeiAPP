@@ -50,7 +50,9 @@ import Vue from "vue";
 import { scrypt } from "crypto";
 import { Script } from "vm";
 
-export default {};
+export default {
+  
+};
 </script>
 
 <style>
