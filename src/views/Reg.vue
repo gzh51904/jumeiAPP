@@ -87,7 +87,13 @@
             />
           </div>
         </div>
-        <input type="submit" value="注册" class="register_button" id="tele_register" @click.prevent="reg" />
+        <input
+          type="submit"
+          value="注册"
+          class="register_button"
+          id="tele_register"
+          @click.prevent="reg"
+        />
       </form>
       <div class="register_agreement jm_center">
         点击注册，表示同意
@@ -98,32 +104,69 @@
 </template>
 
 <script>
+import { createCipheriv } from "crypto";
 // import Vue from "vue";
 // import { scrypt } from 'crypto';
 // import { Script } from 'vm';
 // import rem from '../../public/rem'
 export default {
-    data(){
-        
+  data() {
     return {
-        phonenum:'',
-         password:'',
-        send:false
-    }
+     ruleForm: {
+        phonenum: "",
+        password: "",
+        send: false
+       },
+    };
+    let validateUsername = (rule, value, callback) => {
+      this.$axios
+        .get("http://localhost:1904/reg/check", {
+          params: {
+            phonenum: value
+          }
+        })
+        .then(({ data }) => {
+          if (data.code == 250) {
+            callback(new Error("用户名已存在"));
+          } else {
+            callback();
+          }
+        });
+    };
+  },
+  methods: {
+    //  goBack(){
+    //  this.$router.go(-1);
 
+    // }
+    // ,
+  reg() {
+    if(this.send==true){
+            // 验证通过，发请求到后端，保存用户名到数据库
+            let {phonenum,password} = this.ruleForm;
+            this.$axios.post('/reg',{
+                phonenum,
+                password
+            }).then(({data})=>{
+                if(data.code == 200){
+                    //成功跳转登录页
+                    this.$router.replace({name:'Login'});
+                }
+            })
+       
+      }else{
+          this.$message("注册失败");
+      }
     },
-    methods:{
-        //  goBack(){
-        //  this.$router.go(-1);
 
-        // }
-        // ,
-        checkPhone(){
-        if(!(/^1[34578]\d{9}$/.test(this.phonenum) )){
-                this.$message("请输入11位手机号码");
-                this.send = false;
-        }else{
-            // let username = this.phonenum;
+
+
+    checkPhone() {
+      if (!/^1[34578]\d{9}$/.test(this.phonenum)) {
+        this.$message("请输入11位手机号码");
+        this.send = false;
+      } else {
+        // let username = this.phonenum;
         // let params = {username}
         //     this.$axios
         //         .get("/reg/check", {
@@ -135,28 +178,23 @@ export default {
         //             this.$message("已注册")
         //         }
         // })
-        }},
-        checkclick:{
-          reg(){
-              if(this.send==true){
-                 this.$message("注册成功");
-              }
-            }
-        },
-        checkPWD(){
-          const reg =/^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)(?!([^(0-9a-zA-Z)]|[\(\)])+$)([^(0-9a-zA-Z)]|[\(\)]|[a-z]|[A-Z]|[0-9]){6,}$/;
-          if(reg.test(this.password)){
-            this.send=true;
-          }else{
-            // document.getElementsByClassName('password')[0].className="active";
-             this.$message("请设置6-16位登录密码，并且包含字母");
-          }
-      
+      }
     },
- 
+    checkPWD() {
+      const reg = /^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)(?!([^(0-9a-zA-Z)]|[\(\)])+$)([^(0-9a-zA-Z)]|[\(\)]|[a-z]|[A-Z]|[0-9]){6,}$/;
+      if (reg.test(this.password)) {
+        this.send = true;
+      } else {
+        // document.getElementsByClassName('password')[0].className="active";
+        this.$message("请设置6-16位登录密码，并且包含字母");
+      }
+    },
+    created() {
+      this.$store.state.isok = true;
+      console.log(this.state)
     }
-
-}
+  }
+};
 </script>
 
 <style>

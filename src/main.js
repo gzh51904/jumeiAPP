@@ -13,6 +13,7 @@ Vue.use(ElementUI);
 
 import axios from 'axios'
 Vue.prototype.$axios = axios;
+axios.defaults.baseURL = 'http://localhost:1904';
 Vue.config.productionTip = false
 
 Vue.use(VeeValidate);
