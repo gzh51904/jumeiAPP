@@ -33,7 +33,7 @@
   };
 </script>
 
-<style>
+<style lang="scss" scoped>
     
 .detail_msg_img img {
     display: block;

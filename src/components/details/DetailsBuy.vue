@@ -22,8 +22,8 @@
 export default {};
 </script>
 
-<style>
-c
+<style lang="scss" scoped>
+
 .bgc-f {
   background-color: #fff;
 }

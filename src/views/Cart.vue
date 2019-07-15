@@ -1,12 +1,12 @@
 <template>
-    <!-- <div class="cartlist">
+    <div class="cartlist">
         <CartHead/>
         <CartList/>
         购物车
-    </div> -->
+    </div>
 
 
-    <div class="page bg-empty">
+    <!-- <div class="page bg-empty">
         <div class="header">
             <div class="head-back-box">
                 <div class="head-back"></div>
@@ -21,7 +21,7 @@
             <div class="empty-cart">您的购物车中没有商品，请先去挑选心爱的商品吧！</div>
             <div class="go-stroll">去逛逛</div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -37,13 +37,13 @@
 
 <script>
 
-    // import CartHead from '../components/cart/CartHead.vue';
-    // import CartList from '../components/cart/CartList.vue';
+    import CartHead from '../components/cart/CartHead.vue';
+    import CartList from '../components/cart/CartList.vue';
 
 export default {
     components:{
-        // CartHead,
-        // CartList
+        CartHead,
+        CartList
     }
 }
 </script>
@@ -73,7 +73,7 @@ a {
 }
 
 
-.page.bg-empty {
+/* .page.bg-empty {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -157,7 +157,7 @@ div {
     margin-top: 1.4375rem;
     font-size: .8125rem;
 }
-
+ */
 
 
 
