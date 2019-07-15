@@ -1,10 +1,10 @@
 <template>
   <div id="footer">
     <footer class="bottom-nav">
-      <router-link class="home" to="/" active-class="active" exact>首页</router-link>
-      <router-link class="group" to="/group" active-class="active">拼团</router-link>
-      <router-link class="cart" to="/cart" active-class="active">购物车</router-link>
-      <router-link class="mine" to="/mine" active-class="active">我的</router-link>
+      <router-link class="home" to="/" active-class="active" tag="span" exact>首页</router-link>
+      <router-link class="group" to="/group" active-class="active" tag="span">拼团</router-link>
+      <router-link class="cart" to="/cart" active-class="active" tag="span">购物车</router-link>
+      <router-link class="mine" to="/mine" active-class="active" tag="span">我的</router-link>
     </footer>
   </div>
 </template>
@@ -21,9 +21,6 @@ ul,
 li {
   list-style: none;
 }
-a {
-  text-decoration: none;
-}
 #footer {
   width: 100%;
   position: fixed;
@@ -34,13 +31,13 @@ a {
   border-top: 1px solid rgb(238, 238, 238);
   .bottom-nav {
     width: 100%;
-    height: 3.125rem;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    a {
+    span {
       width: 20%;
-      height: 3.125rem;
+      height: 50px;
       background: #bcbc;
       text-align: center;
       background-position: center 10px;
@@ -58,7 +55,6 @@ a {
         background-position: center 10px;
         color: rgb(254, 64, 112);
         background-size: 22px 20px;
-        text-decoration: none;
       }
     }
     .group {
@@ -70,7 +66,6 @@ a {
         background: url(../assets/footnav/foot_nav_icon_group_a.png) no-repeat;
         background-position: center 10px;
         color: rgb(254, 64, 112);
-        text-decoration: none;
         background-size: 22px 20px;
 
       }
@@ -84,7 +79,6 @@ a {
         background: url(../assets/footnav/foot_nav_icon_cart_a.png) no-repeat;
         background-position: center 10px;
         color: rgb(254, 64, 112);
-        text-decoration: none;
         background-size: 22px 20px;
 
       }
@@ -98,7 +92,6 @@ a {
         background: url(../assets/footnav/foot_nav_icon_mine_a.png) no-repeat;
         background-position: center 10px;
         color: rgb(254, 64, 112);
-        text-decoration: none;
         background-size: 22px 20px;
 
       }
