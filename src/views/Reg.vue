@@ -34,46 +34,14 @@
           </div>
         </div>
         <div class="jm_row">
-          <div class="jm_col">
-            <input
-              type="tel"
-              class="register_input"
-              placeholder="请输入短信验证码"
-              id="mobileVerify"
-              alertname="请输入短信验证码"
-              name="mobileVerify"
-            />
-          </div>
-          <div class="jm_col jm_col_90px">
+
+          <!-- <div class="jm_col jm_col_90px">
             <a class="register_yzm" href="javascript:;">验证</a>
-          </div>
+          </div> -->
         </div>
-        <div id="mobile_verify_code" style="display: none;">
-          <div class="jm_row">
-            <div class="jm_col">
-              <input
-                type="text"
-                maxlength="4"
-                name="hash_code"
-                class="register_input"
-                id="yanzheng_code"
-                placeholder="请按右图输入"
-                alertname="请输入验证码"
-              />
-            </div>
-            <div class="jm_col jm_col_90px">
-              <img
-                id="img_dynamic_hash_code"
-                src="/i/account/hash_code?from=signup&amp;1562811391"
-                class="check_code"
-                onclick="change_code()"
-              />
-            </div>
-          </div>
-        </div>
+
         <div class="jm_row">
           <div class="jm_col">
-            <input type="text" style="display: none;" />
             <input
               type="password"
               class="register_input"
@@ -87,6 +55,18 @@
             />
           </div>
         </div>
+                  <div class="jm_col">
+            <input
+              type="password"
+              class="register_input"
+              placeholder="请确认密码"
+              id="mobileVerify"
+              alertname="请确认密码"
+              name="mobileVerify"
+              v-model="checkPass"
+              @blur="checkPAS"
+            />
+          </div>
         <input
           type="submit"
           value="注册"
@@ -112,27 +92,15 @@ import { createCipheriv } from "crypto";
 export default {
   data() {
     return {
-     ruleForm: {
+    
         phonenum: "",
         password: "",
         send: false
-       },
+      
     };
-    let validateUsername = (rule, value, callback) => {
-      this.$axios
-        .get("http://localhost:1904/reg/check", {
-          params: {
-            phonenum: value
-          }
-        })
-        .then(({ data }) => {
-          if (data.code == 250) {
-            callback(new Error("用户名已存在"));
-          } else {
-            callback();
-          }
-        });
-    };
+  },
+    created(){
+    this.$store.commit("changeshow",false)
   },
   methods: {
     //  goBack(){
@@ -143,14 +111,16 @@ export default {
   reg() {
     if(this.send==true){
             // 验证通过，发请求到后端，保存用户名到数据库
-            let {phonenum,password} = this.ruleForm;
-            this.$axios.post('/reg',{
-                phonenum,
-                password
-            }).then(({data})=>{
-                if(data.code == 200){
+            let phonenum = this.phonenum;
+            let password = this.password;
+             let params ={phonenum,password};
+            this.$axios.post('/reg',params).then(({data})=>{
+                  this.$message("注册成功");
+                if(data.code == 1000){
                     //成功跳转登录页
+                  
                     this.$router.replace({name:'Login'});
+               
                 }
             })
        
@@ -165,20 +135,22 @@ export default {
       if (!/^1[34578]\d{9}$/.test(this.phonenum)) {
         this.$message("请输入11位手机号码");
         this.send = false;
-      } else {
-        // let username = this.phonenum;
-        // let params = {username}
-        //     this.$axios
-        //         .get("/reg/check", {
-        //         params
-        //         })
-        //         .then(({ data }) => {
-        //         // console.log(data)
-        //         if(data.status==400){
-        //             this.$message("已注册")
-        //         }
-        // })
       }
+      //  else {
+      //   let phonenum = this.phonenum;
+      //   let params = {phonenum}
+      //       this.$axios
+      //           .get("http://localhost:1904/reg/check", {
+      //              params
+      //           })
+      //           .then(({ data }) => {
+      //           // console.log(data)
+            
+      //           if(data.code==250){
+      //               this.$message("已注册")
+      //           }
+      //   })
+      // }
     },
     checkPWD() {
       const reg = /^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)(?!([^(0-9a-zA-Z)]|[\(\)])+$)([^(0-9a-zA-Z)]|[\(\)]|[a-z]|[A-Z]|[0-9]){6,}$/;
@@ -189,6 +161,20 @@ export default {
         this.$message("请设置6-16位登录密码，并且包含字母");
       }
     },
+   checkPAS(){
+     checkPass:{
+           let password = this.password;
+           let checkPass = this.checkPass;
+             if(checkPass != password){
+                   this.$message("输入的密码不一致");
+                      this.send = false;
+                }else{
+                 
+                }
+     }
+     
+        },
+        
     created() {
       this.$store.state.isok = true;
       console.log(this.state)
@@ -199,7 +185,7 @@ export default {
 
 <style>
 html {
-  background: #f2f2f2;
+  background: #fff;
 }
 body {
   color: #999;
