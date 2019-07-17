@@ -3,7 +3,7 @@
       <div class="head-back-box">
           <div class="head-back"></div>
       </div>
-      <div class="head-title">购物车</div>
+      <div class="head-titles">购物车</div>
       <div class="head-home"></div>
   </div>
 
@@ -30,6 +30,12 @@ a {
   text-decoration: none;
 }
 
+html {
+    color: #333;
+    line-height: 1rem;
+    font-size: 1rem;
+}
+
 .header {
     height: 2.5625rem;
     padding: 0 .85rem;
@@ -51,7 +57,7 @@ a {
     background-size: 100% 100%;
 }
 
-.head-title {
+.head-titles {
     flex: 1;
     text-align: center;
 }

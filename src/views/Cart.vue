@@ -1,8 +1,10 @@
 <template>
     <div class="cartlist">
         <CartHead/>
-        <CartList/>
-        购物车
+        <!-- <CartList/> -->
+        <!-- 购物车 -->
+        <CartGoods/>
+        <CartPrice/>
     </div>
 
 
@@ -38,12 +40,16 @@
 <script>
 
     import CartHead from '../components/cart/CartHead.vue';
-    import CartList from '../components/cart/CartList.vue';
+    // import CartList from '../components/cart/CartList.vue';
+    import CartGoods from '../components/cart/CartGoods.vue';
+    import CartPrice from '../components/cart/CartPrice.vue';
 
 export default {
     components:{
         CartHead,
-        CartList
+        // CartList
+        CartGoods,
+        CartPrice
     }
 }
 </script>
@@ -159,7 +165,16 @@ div {
 }
  */
 
-
+/* .cartlist {
+        color: #333;
+    font-size: .75rem;
+    line-height: 1;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+        padding-bottom: 45px;
+} */
 
 
 
