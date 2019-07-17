@@ -114,7 +114,8 @@ import { Script } from 'vm';
 import FootNav from "@/components/FootNav.vue"
 
 export default {
-    
+
+
 }
 </script>
 <style >

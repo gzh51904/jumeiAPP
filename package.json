@@ -19,8 +19,9 @@
     "module": "^1.2.5",
     "mongodb": "^3.2.7",
     "px2rem-loader": "^0.1.9",
-    "sass": "^1.22.3",
+    "sass": "^1.22.5",
     "sass-loader": "^7.1.0",
+    "scss": "^0.2.4",
     "vee-validate": "^2.2.12",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7",
@@ -34,6 +35,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
+    "node-sass": "^4.12.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

@@ -23,23 +23,30 @@
                 </div>
                 <div class="jm_row icon_phone">
                     <div class="jm_col">
-                        <input type="text" class="register_input" name="dynamic_mobile" value="" id="dynamic_mobile" placeholder="请输入11位手机号" alertname="手机号">
+                        <input type="text" class="register_input" name="dynamic_mobile" value="" id="dynamic_mobile" placeholder="请输入11位手机号" alertname="手机号" v-model="phonenum">
                     </div>
 
                 </div>
                 <div class="jm_row">
                     <div class="jm_col">
-                        <input type="tel" class="register_input" name="telephoneN" placeholder="请输入短信验证码" id="dynamic_password" alertname="短信验证码" maxlength="6">
+                           <input
+              type="password"
+              class="register_input"
+              name="password"
+              placeholder="6-16位登录密码"
+              alertname="请设置密码"
+              maxlength="16"
+              autocomplete="new-password"
+              v-model="password"
+            />
                     </div>
-                    <div class="jm_col jm_col_90px">
-                        <a class="register_yzm" href="javascript:;">验证</a>
-                    </div>
+               
                 </div>
                 <div class="jm_row register_jumei_account">
                     <a class="jm_col jm_left" id="use_jumei_account">使用聚美帐号登录</a>
                     <div class="jm_col jm_right">30天内自动登录</div>
                 </div>
-                <input type="submit" value="登录" class="register_button" id="ga_dynamic_login">
+                <input type="submit" value="登录" class="register_button" id="ga_dynamic_login" @click.prevent="login">
             </div>
        
     </form>
@@ -51,7 +58,44 @@ import { scrypt } from "crypto";
 import { Script } from "vm";
 
 export default {
-  
+      data() {
+    return {
+        password: "",
+        phonenum: "",
+    }
+  },
+  created(){
+    this.$store.commit("changeshow",false)
+  },
+    methods:{
+
+      login(){
+          let phonenum = this.phonenum;
+          let password = this.password;
+           let params = {phonenum,password};
+       this.$axios
+            .get("/login", {
+              params
+            }).then(( res ) => {
+                let {data,headers} = res
+                  console.log(res);
+              if(data.code == 250) {
+                // this.$message("用户名或密码错误");
+           alert('用户名或密码错误！')
+              } else if(data.code === 1000) {
+                // this.$message("登录成功");
+                //  alert('登录成功');
+                      // 保存登录信息
+                    localStorage.setItem('Authorization',data.data);
+                     // 获取目标路径
+                    let targetPath = this.$route.query.redirectTo;
+                    this.$router.replace({path:'/home'});
+                    // this.$router.replace({name:'/home'})
+              }
+          
+      });
+      }
+  }
 };
 </script>
 

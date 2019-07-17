@@ -1,7 +1,7 @@
 <template>
 <!-- 路由配置匹配后，渲染对应的组件到router-vue -->
   <div id="app">
-    <FootNav/>
+    <FootNav v-show="isshow"/>
     <router-view/>
   </div>
 </template>
@@ -12,6 +12,11 @@ import FootNav from "@/components/FootNav.vue"
 export default {
   components: {
     FootNav
+  },
+  computed:{
+    isshow(){
+      return this.$store.state.isok
+    }
   }
 }
 </script>

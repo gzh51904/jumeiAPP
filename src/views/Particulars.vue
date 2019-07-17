@@ -300,17 +300,7 @@
 <script>
 export default {};
 </script>
-data(){
-  return{
-    page:[
-      {
-        name: xiao
-        tit: cios
-        price:32
-      }
-    ]
-  }
-}
+
 <style>
 * {
   margin: 0;

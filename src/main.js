@@ -16,7 +16,7 @@ Vue.prototype.$axios = axios;
 axios.defaults.baseURL = 'http://localhost:1904';
 Vue.config.productionTip = false
 
-Vue.use(VeeValidate);
+Vue.use(VeeValidate); 
 
 new Vue({
   render: h => h(App),
