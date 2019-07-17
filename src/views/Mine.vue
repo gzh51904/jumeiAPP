@@ -111,7 +111,7 @@
 import Vue from "vue";
 import { scrypt } from 'crypto';
 import { Script } from 'vm';
-
+import FootNav from "@/components/FootNav.vue"
 
 export default {
     

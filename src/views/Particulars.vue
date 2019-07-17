@@ -10,7 +10,7 @@
 
     <div class="goods-img">
       <a>
-        <img src="../img/Home.jpg" />
+        <img src="../../assets/DetailsImg/swipe1.jpg" />
       </a>
     </div>
 
@@ -128,7 +128,7 @@
       </div>
     </article>
 
-    <!-- 买过的人还这样说 -->
+    <!-- 买过的人还这样说 --> 
     <div class="conments bgc-f">
       <p class="conment-title color3 fs14">买过的人这样说</p>
       <ul class="bd-top">
@@ -300,17 +300,7 @@
 <script>
 export default {};
 </script>
-data(){
-  return{
-    page:[
-      {
-        name: xiao
-        tit: cios
-        price:32
-      }
-    ]
-  }
-}
+
 <style>
 * {
   margin: 0;
@@ -349,7 +339,7 @@ section {
   top: 0;
   width: 2rem;
   height: 2.347rem;
-  background: url(../img/gt.png) center no-repeat;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAgBAMAAAAGZY7BAAAAFVBMVEUAAACenp6ampqampqampqioqKZmZkqMn9dAAAABnRSTlMAFdTEtRaUUOCdAAAALElEQVQY02OAAmEHKINRzQDKEkoSgAkp0lmIwQwohGAhZGE6BlbQACYY7AAA4FEM29fcwlcAAAAASUVORK5CYII=) center no-repeat;
   background-size: 0.4rem 0.8rem;
 }
 a {
@@ -371,7 +361,7 @@ a {
   width: 1.067rem;
   height: 1.067rem;
   position: absolute;
-  background: url(../img/wu.png) center center no-repeat;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAQlBMVEUAAACcnJyampqZmZmampqZmZmZmZmampqcnJyampqampqampqhoaGampqampqbm5ubm5uampqampqampqampqZmZltVD3vAAAAFXRSTlMAH1/ws3Dleja8j2kNq6NEK8Wbg1AbiYnwAAAAvUlEQVQ4y+3TWw6DMAxE0XFt0kCh79n/VissBKJgvAHujyVyEAERbKqmahVpDb0mc1eyE+nIa+ou47wksnE3y9y5jPd5c5dJX7kBoYyv+52BC/ey9N19y2YjH+Qn+K7fP9dhtw/5wFxVvhHUkRVTT+UdYW9qnd2Agwbqc5xSaDjMWMRdi6R2lMZXn8H+xQGFgjRhgdGLET2DtJpDbQXeMfRxwhMGa4Vy9M8u3Wl9cApsdZRFGaayeoBpwGxyP+1/EvyNg9nzAAAAAElFTkSuQmCC) center center no-repeat;
   background-size: contain;
   top: 0.64rem;
   right: 0.693rem;
@@ -542,7 +532,7 @@ div {
   height: 0.64rem;
   top: 0.69333rem;
   right: 0.42667rem;
-  background-image: url(../img/lt.png);
+  /* background-image: url(../img/lt.png); */
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -602,7 +592,7 @@ a:link {
 .arrow-icon-right {
   width: 0.32rem;
   height: 0.64rem;
-  background: url(../img/lt.png) no-repeat;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAaBAMAAAB1IXBvAAAAElBMVEUAAACenp6ampqampqampqZmZko0meuAAAABXRSTlMAFdTEtTuxabkAAAAmSURBVAjXY3AWYAADU0UILRQEEWBUpaZAMIyGicPUUcZFuBvmDwDUOwlrl6IFYQAAAABJRU5ErkJggg==) no-repeat;
   background-size: contain;
   position: absolute;
   top: 0.69333rem;
@@ -651,11 +641,7 @@ a:link {
   display: inline-block;
 }
 
-.introduction-item p {
-  color: #333;
-  font-size: 13px;
-  line-height: 13px;
-}
+
 .introduction-list-title span {
   display: inline-block;
 }
@@ -669,11 +655,7 @@ a:link {
   position: relative;
   top: 1px;
 }
-.introduction-item p {
-  color: #333;
-  font-size: 13px;
-  line-height: 13px;
-}
+
 
 .introduction-fold .introduction-item p {
   padding-right: 0.53333rem;
@@ -684,6 +666,13 @@ a:link {
   font-size: 13px;
   line-height: 13px;
 }
+
+
+
+/* ---------分割线------------------------------------ */
+
+
+
 
 .page_sku_wrapper {
   padding-left: 0.64rem;
@@ -742,7 +731,10 @@ a:link {
   background-size: 100% 100%;
 }
 
-/* 买过的人还这样说 */
+
+
+
+/* 买过的人还这样说 ---------*/
 .conment-title {
   line-height: 2.34667rem;
   padding-left: 0.64rem;

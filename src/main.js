@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './routers';
-import 'lib-flexible';
+// import 'lib-flexible';
 import store from './vuex';
 
 //表单验证框架
@@ -13,6 +13,7 @@ Vue.use(ElementUI);
 
 import axios from 'axios'
 Vue.prototype.$axios = axios;
+axios.defaults.baseURL = 'http://localhost:1904';
 Vue.config.productionTip = false
 
 Vue.use(VeeValidate); 

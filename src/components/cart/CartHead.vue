@@ -1,64 +1,22 @@
 <template>
-    <div class="cartlist">
-        <CartHead/>
-        <CartList/>
-        购物车
-    </div>
+  <div class="header">
+      <div class="head-back-box">
+          <div class="head-back"></div>
+      </div>
+      <div class="head-title">购物车</div>
+      <div class="head-home"></div>
+  </div>
 
-
-    <!-- <div class="page bg-empty">
-        <div class="header">
-            <div class="head-back-box">
-                <div class="head-back"></div>
-            </div>
-            <div class="head-title">购物车</div>
-            <div class="head-home"></div>
-        </div>
-
-
-        <div class="cart-no-goods">
-            <div class="oops"></div>
-            <div class="empty-cart">您的购物车中没有商品，请先去挑选心爱的商品吧！</div>
-            <div class="go-stroll">去逛逛</div>
-        </div>
-    </div> -->
-
-
-
-
-
-
-
-
+  
 
 </template>
 
-    
-
 <script>
-
-    import CartHead from '../components/cart/CartHead.vue';
-    import CartList from '../components/cart/CartList.vue';
-
-export default {
-    components:{
-        CartHead,
-        CartList
-    }
-}
+export default {};
 </script>
 
-<style>
-    /* .cart {
-        color: #333;
-        font-size: .75rem;
-        line-height: 1;
-        height: 100%;
-        box-sizing: border-box;
-        overflow-y: auto;
-        background-color: #f5f5f5;
+<style lang="scss" scoped>
 
-    } */
 
 * {
   margin: 0;
@@ -71,14 +29,6 @@ li {
 a {
   text-decoration: none;
 }
-
-
-/* .page.bg-empty {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 
 .header {
     height: 2.5625rem;
@@ -115,57 +65,6 @@ a {
 div {
     display: block;
 }
-
-
-
-
-
-.cart-no-goods {
-    flex: 1;
-    background: #fff;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.cart-no-goods .oops {
-    width: 5.375rem;
-    height: 5.125rem;
-    background: url(../assets/no-card-oops.png) no-repeat;
-    background-size: 100% 100%;
-}
-
-.cart-no-goods .empty-cart {
-    font-size: .875rem;
-    line-height: .9375rem;
-    color: #333;
-    margin-top: 1rem;
-    padding: 0 .75rem;
-    text-align: center;
-}
-
-.cart-no-goods .go-stroll {
-    width: 7.8125rem;
-    height: 2.25rem;
-    border-radius: 1.25rem;
-    color: #fff;
-    background: #fe4070;
-    line-height: 2.25rem;
-    text-align: center;
-    margin-top: 1.4375rem;
-    font-size: .8125rem;
-}
- */
-
-
-
-
-
-
-
-
 
 
 
