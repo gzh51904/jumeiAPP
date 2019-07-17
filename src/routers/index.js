@@ -11,6 +11,7 @@ import Home from '../views/Home.vue';
 import Group from '../views/Group.vue';
 import Cart from '../views/Cart.vue';
 import Mine from '../views/Mine.vue';
+
 // import Login from '../views/Login.vue';
 // import Reg from '../views/Reg.vue';
 // import Goods from '../components/Goods.vue';
@@ -23,14 +24,11 @@ let router = new VueRouter({
     routes:[
         {
         name: 'Home',
-        path: '/',//当浏览器地址为#/home时，渲染Home组件
+        path: '/home',//当浏览器地址为#/home时，渲染Home组件
         //component: Home,
 
         // 多路由视图的处理
-        components:{
-            default:Home,
-            bottom:{template:'<h4>Bottom</h4>'}
-      }
+        component:Home
     },
     // 重定向
     {

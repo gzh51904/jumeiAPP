@@ -13,7 +13,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         // 决定底部选项卡是否出现
-        isok:false,
+        isok:true,
         isShowMfooter: true,
         isShowMmodel: 0,
         isLogin: 0,
@@ -30,6 +30,9 @@ export default new Vuex.Store({
         },
         addQty(state, qty) {
             state.qty = qty
+        },
+        changeshow(state,bool){
+            state.isok = bool;
         }
     },
     actions: {
